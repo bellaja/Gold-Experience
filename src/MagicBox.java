@@ -1,15 +1,15 @@
 import java.util.Random;
 
 public class MagicBox<T> {
-    int size;
-    T[] items;
+    private int size;
+    private T[] items;
 
     public MagicBox(int size) {
         this.size = size;
         items = (T[]) new Object[size];
     }
 
-    boolean add(T item) {
+    public boolean add(T item) {
         for (int i = 0; i < items.length; i++) {
             if (items[i] == null) {
                 items[i] = item;
@@ -19,7 +19,7 @@ public class MagicBox<T> {
         return false;
     }
 
-    T pick() {
+    public T pick() {
         for (int i = 0; i < items.length; i++) {
             if (items[i] == null) {
                 throw new RuntimeException("Коробка не заполнена!");
